@@ -8,9 +8,5 @@ class User < ApplicationRecord
   has_many :orders
 
   validates :email, presence: true, uniqueness: true
-  validates :password, presence: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :address, presence: true
-
+  validates :password, :first_name, :last_name, :address, presence: true
 end

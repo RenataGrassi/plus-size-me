@@ -3,17 +3,9 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
-  def update
-    if @order.update()
-      redirect_to @order, notice: 'Your order has been successfully done!'
-    else
-      render :edit
-    end
+  def edit
   end
 
-  private
-
-  # def order_params
-  #   params.require(:order).permit(:name, :photo)
-  # end
+  def update
+  end
 end

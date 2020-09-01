@@ -3,9 +3,6 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
-  def edit
-  end
-
   def update
   end
 end

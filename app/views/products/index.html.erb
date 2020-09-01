@@ -1,0 +1,12 @@
+<h2>All Products</h2>
+
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <%= link_to product.name, product_path(product.id) %> · <%= link_to "Delete", product_path(product.id), method: :delete, data: { confirm: "Delete #{product.name}?" } %>
+    </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Add A Product", new_product_path %></p> <%# Move to navbar if user authorized %>
+<p><%= link_to "Homepage", root_path %></p>

@@ -1,12 +1,19 @@
 <h2>All Products</h2>
+<div class="container">
+  <div class="cards">
+    <% @products.each do |product| %>
+      <div class="card-category" style="">
+        <%= link_to product.name, product_path(product.id) %> · <%= link_to "Delete", product_path(product.id), method: :delete, data: { confirm: "Delete #{product.name}?" } %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<ul>
-  <% @products.each do |product| %>
-    <li>
-      <%= link_to product.name, product_path(product.id) %> · <%= link_to "Delete", product_path(product.id), method: :delete, data: { confirm: "Delete #{product.name}?" } %>
-    </li>
-  <% end %>
-</ul>
+
+
+
+
+
 
 <p><%= link_to "Add A Product", new_product_path %></p> <%# Move to navbar if user authorized %>
 <p><%= link_to "Homepage", root_path %></p>

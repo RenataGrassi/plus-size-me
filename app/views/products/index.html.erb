@@ -1,9 +1,9 @@
 <h2>All Products</h2>
-<div class=“container”>
-  <div class=“cards-grid”>
+<div class="container">
+  <div class="cards-grid">
     <% @products.each do |product| %>
-      <div class=“card-category” style=“”>
-        <%= link_to product.name, product_path(product.id) %> · <%= link_to “Delete”, product_path(product.id), method: :delete, data: { confirm: “Delete #{product.name}?” } %>
+      <div class="card-category" style="">
+        <%= link_to product.name, product_path(product.id) %> · <%= link_to "Delete", product_path(product.id), method: :delete, data: { confirm: "Delete #{product.name}?" } %>
       </div>
     <% end %>
   </div>

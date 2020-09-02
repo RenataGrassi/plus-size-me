@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    if params[:seller]
+      @products = Product.where(user: params[:seller])
+    else
+      @products = Product.all
+    end
   end
 
   def show
@@ -13,6 +17,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.user = current_user
     if @product.save
       redirect_to products_path
     else

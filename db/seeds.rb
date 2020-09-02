@@ -31,6 +31,7 @@ pants = Product.create(name: "Leather Jacket", description: "This will be your n
 
 skirt = Product.create(name: "Long skirt", description: "Beautiful skirt", gender: "feminine", brand: "Zara", size: "XXXL", price: 200, category: "skirt", user_id: User.second.id)
 
+
 # ORDERS
 
 orderone = Order.create(status: true, user: biancaferreira)

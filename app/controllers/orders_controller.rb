@@ -6,3 +6,8 @@ class OrdersController < ApplicationController
   def update
   end
 end
+
+
+
+# products >> product_order (add to card functionality) >> order (shopping card)
+# CRUD finished on wednesday night + homepage + idealy the add to card

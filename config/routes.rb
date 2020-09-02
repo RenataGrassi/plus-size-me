@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :orders
+  resources :products
+  
+  resources :orders, only: [:index, :update]
 
   devise_for :users
   root to: 'pages#home'

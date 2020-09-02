@@ -1,0 +1,16 @@
+<h2>Add a new product</h2>
+
+<%= simple_form_for(@product) do |form| %>
+  <%= form.input :name %>
+  <%= form.input :description %>
+  <%= form.input :gender %>
+  <%= form.input :size %>
+  <%= form.input :brand %>
+  <%= form.input :category %>
+  <%= form.input :price %>
+  <%= form.submit %>
+<% end %>
+
+<p><%= link_to "All Products", products_path %></p>
+
+<%# The user can only add a new product if logged in - authorization + navbar %> 

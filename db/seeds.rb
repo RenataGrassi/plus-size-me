@@ -29,6 +29,7 @@ dress = Product.create(name: "Cute Dress", description: "A cute dress to go to t
 pants = Product.create(name: "Leather Jacket", description: "This will be your new best friend.", gender: "masculine",
             brand: "Tommy Hilfinger", size: "XXL", price: 80, category: "jackets", user_id: User.second.id)
 
+skirt = Product.create(name: "Long skirt", description: "Beautiful skirt", gender: "feminine", brand: "Zara", size: "XXXL", price: 200, category: "skirt", user_id: User.second.id)
 
 # ORDERS
 

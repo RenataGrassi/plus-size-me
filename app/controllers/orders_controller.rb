@@ -11,6 +11,9 @@ class OrdersController < ApplicationController
   end
 
   def destroy
+    # NOT SURE ABOUT THIS ONE
+    @order.destroy
+    redirect_to products_path
   end
 end
 

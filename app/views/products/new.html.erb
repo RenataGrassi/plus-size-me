@@ -3,7 +3,7 @@
 <%= simple_form_for(@product) do |form| %>
   <%= form.input :name %>
   <%= form.input :description %>
-  <%= form.input :gender, collection: Product::CATEGORY %>
+  <%= form.input :gender, collection: Product::GENDER %>
   <%= form.input :size, collection: Product::SIZE %>
   <%= form.input :brand %>
   <%= form.input :category, collection: Product::CATEGORY %>

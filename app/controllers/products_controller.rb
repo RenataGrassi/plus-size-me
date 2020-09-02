@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
     @product = Product.find(params[:id])
   end

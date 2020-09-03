@@ -2,7 +2,10 @@
 <div class="container">
   <div class="cards-grid">
     <% @products.each do |product| %>
-      <div class="card-category" style="">
+      <div class="card-category" >
+        <% if product.photo.attached? %>
+        <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
         <%= link_to product.name, product_path(product.id) %> · <%= link_to "Delete", product_path(product.id), method: :delete, data: { confirm: "Delete #{product.name}?" } %>
       </div>
     <% end %>

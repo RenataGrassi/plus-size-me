@@ -1,10 +1,19 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="/"><strong>PLUS SIZE ME</strong></a>
-  <form class="form-inline">
-    <input type="text" name="search" id="search_query" value="" placeholder="Search" class="form-control pr-5 mr-3" label_html="{:class=>&quot;my_class&quot;}">
+<nav class="nav navbar-light bg-light justify-content-between pt-2 pb-2 pr-3 pl-3">
+  <div class="nav-brand">
+    <a class="navbar-brand" href="/"><strong>PLUS SIZE ME</strong></a>
+  </div>
+
+  <div class="nav-search">
+    <form class="form-inline d-flex">
+      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn text-secondary" type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+
+  <div class="nav-buttons d-flex">
     <a class="btn btn-outline-dark" href="/users/sign_in" role="button">Login</a>
     <a class="btn btn-dark ml-2" href="/users/sign_up" role="button">Sign Up</a>
-    <a class="btn btn-outline-dark ml-2" href="/products/new" role="button">Add Product</a>
-    <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-  </form>
+    <a class="btn btn-dark ml-2" href="/products/new" role="button">Add Product</a>
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-outline-dark ml-2", data: { confirm: "You will be disconnected. Are you sure?" } %>
+  </div>
 </nav>

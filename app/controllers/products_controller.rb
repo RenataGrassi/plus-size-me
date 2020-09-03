@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   # THE 1ST PART ALLOWS US THAT WHEN SOMEONE BUY A PRODUCT, IN THE
   # INDEX HE ONLY HAS ACCESS TO THE ARTICLES FROM THE SAME SELLER
+
   def index
     if params[:seller]
       @products = Product.where(user: params[:seller])
@@ -12,6 +14,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    authorize @product
   end
 
   def new
@@ -22,6 +25,8 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user = current_user
+    authorize @product
+
     if @product.save
       redirect_to products_path
     else
@@ -31,10 +36,13 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    authorize @product
   end
 
   def update
-    @product = Product.find params[:id]
+    @product = Product.find(params[:id])
+    authorize @product
+
     if @product.update(product_params)
       redirect_to product_path(@product.id)
     else
@@ -44,6 +52,8 @@ class ProductsController < ApplicationController
 
   def destroy
     @product = Product.find(params[:id])
+    authorize @product
+
     @product.destroy
     redirect_to products_path
   end

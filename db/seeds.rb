@@ -9,7 +9,7 @@
 # USER SEEDS
 
 biancaferreira = User.create(email: "biancaferreiralp@gmail.com", password: "123456", first_name: "Bianca",
-            last_name: "Ferreira", address: "Jacarepagua")
+            last_name: "Ferreira", address: "Jacarepagua", admin: true)
 
 joaofelipe = User.create(email: "joaofelipemendes@gmail.com", password: "helloworld", first_name: "Joao Felipe",
             last_name: "Mendes", address: "Botafogo")

@@ -21,7 +21,7 @@
   margin-top: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 24px;
 }
 
 .card-category {
@@ -31,3 +31,9 @@
   float: left;
   margin: 10px;
 }
+
+body {
+    background: #f8f9fa;
+}
+
+

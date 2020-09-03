@@ -3,8 +3,8 @@ class ProductsController < ApplicationController
   # THE 1ST PART ALLOWS US THAT WHEN SOMEONE BUY A PRODUCT, IN THE
   # INDEX HE ONLY HAS ACCESS TO THE ARTICLES FROM THE SAME SELLER
   def index
-    if params[:seller]
-      @products = Product.where(user: params[:seller])
+    if params[:search]
+      @products = Product.product_search(params[:search])
     else
       @products = Product.all
     end

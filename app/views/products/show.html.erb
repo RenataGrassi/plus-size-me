@@ -5,3 +5,7 @@
 <p><%= link_to "Edit Product", edit_product_path %></p> <%# Add authorization to current_user %>
 <p><%= link_to "All Products", products_path %></p>
 <p></p><%= link_to "Homepage", root_path %></p>
+
+<% @products.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>

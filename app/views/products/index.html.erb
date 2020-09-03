@@ -1,19 +1,15 @@
-<h2>All Products</h2>
 <div class="container">
   <div class="cards-grid">
     <% @products.each do |product| %>
-      <div class="card-category" style="">
-        <%= link_to product.name, product_path(product.id) %> · <%= link_to "Delete", product_path(product.id), method: :delete, data: { confirm: "Delete #{product.name}?" } %>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="..." href="https://unsplash.com/photos/Hd4nlxLgIbA">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-product-price"></p>
       </div>
+    </div>
     <% end %>
   </div>
 </div>
 
-
-
-
-
-
-
-<p><%= link_to "Add A Product", new_product_path %></p> <%# Move to navbar if user authorized %>
 <p><%= link_to "Homepage", root_path %></p>

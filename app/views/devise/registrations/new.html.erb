@@ -3,35 +3,47 @@
   <div class="contrainer pt-2">
     <div class="row justify-content-center">
       <div class="col-12 col-md-6 col-lg-3">
-        <h2 class="text-center mb-5 devise-padding">Create your account</h2>
+        <h2 class="text-center mb-5 devise-padding">CREATE YOUR ACCOUNT</h2>
         <div class="row">
           <div class="col">
             <div class="form-inputs">
               <div class="row">
                 <div class="col">
-                  <%= f.input :first_name, required: true, placeholder: "First name"%>
+                  <div class="pb-3">
+                    <%= f.input :first_name, required: true, placeholder: "First name"%>
+                  </div>
                 </div>
                 <div class="col">
-                  <%= f.input :last_name, required: true, placeholder: "Last name"%>
+                  <div class="pb-3">
+                    <%= f.input :last_name, required: true, placeholder: "Last name"%>
+                  </div>
                 </div>
               </div>
-              <%= f.input :address, required: true, placeholder: "Your address"%>
-              <%= f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" }, placeholder: "Your email"%>
-              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+              <div class="pb-3">
+                <%= f.input :address, required: true, placeholder: "Your address"%>
+              </div>
+              <div class="pb-3">
+                <%= f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" }, placeholder: "Your email"%>
+              </div>
+              <div class="pb-3">
+                <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                           input_html: { autocomplete: "new-password" }, placeholder: "Your password" %>
-              <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password" }, placeholder: "Confirm your password" %>
+              </div>
+              <div class="pb-3">
+                <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password" }, placeholder: "Confirm your password" %>
+              </div>
             </div>
           </div>
         </div>
-        <div class="form-actions">
-          <%= f.submit "Create an account", class: "btn-outline-dark btn-lg w-15 mt-3 button-center" %>
+        <div class="form-actions mb-4">
+          <%= f.submit "Create an account", class: "btn btn-dark btn-block" %>
         </div>
       </div>
     </div>
   </div>
 <% end %>
 
-  <div class="contrainer pt-2">
+  <div class="contrainer mt-3 mb-5">
     <div class="row justify-content-center">
       <div class="col-12 col-md-6 col-lg-3">
         <%= render "devise/shared/links" %>

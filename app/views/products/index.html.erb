@@ -2,12 +2,12 @@
 
 <div class="card-deck">
   <% @products.each do |product| %>
-  <%= link_to product.name, product_path(product.id) %> · <%= link_to "Delete", product_path(product.id), method: :delete, data: { confirm: "Delete #{product.name}?" } %>
-  <div class="card-img-top col-md-12" >
-    <img class="card-img-top"> <%= cl_image_tag product.photo.key, crop: :fit, height: 450, width: 500, alt: product.name %>
-    <div class="card-footer">
-      <p class="card-text"> <%= product.name %></p>
-    </div>
+  <div class="row card-img-top col-md-3" >
+    <%= link_to product_path(product.id) do %>
+      <img class="card-img-top"><%= cl_image_tag product.photo.key, height: 280, width: 280, crop: :fill, alt: product.name %>
+      <p><%= product.name.upcase %></p>
+    <% end %>
   </div>
   <% end %>
 </div>
+

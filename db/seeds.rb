@@ -11,14 +11,14 @@ OpenURI::Buffer.const_set 'StringMax', 0
 
 # USER SEEDS
 
-# biancaferreira = User.create(email: "biancaferreiralp@gmail.com", password: "123456", first_name: "Bianca",
-#             last_name: "Ferreira", address: "Jacarepagua", admin: true)
+biancaferreira = User.create(email: "biancaferreiralp@gmail.com", password: "123456", first_name: "Bianca",
+             last_name: "Ferreira", address: "Jacarepagua", admin: true)
 
-# joaofelipe = User.create(email: "joaofelipemendes@gmail.com", password: "helloworld", first_name: "Joao Felipe",
-#             last_name: "Mendes", address: "Botafogo")
+joaofelipe = User.create(email: "joaofelipemendes@gmail.com", password: "helloworld", first_name: "Joao Felipe",
+             last_name: "Mendes", address: "Botafogo")
 
-# berenicemahe = User.create(email: "berenice.mahe@gmail.com", password: "bonjour", first_name: "Bérénice",
-#             last_name: "Mahé", address: "Gloria")
+berenicemahe = User.create(email: "berenice.mahe@gmail.com", password: "bonjour", first_name: "Bérénice",
+             last_name: "Mahé", address: "Gloria")
 
 
 # PRODUCT SEEDS
@@ -56,7 +56,7 @@ pants.photo.attach(io: file, filename: filename)
 pants.save!
 
 skirt = Product.create(name: "Long skirt", description: "Beautiful skirt", gender: "feminine", brand: "Zara",
-                          size: "XXXL", price: 200, category: "skirt", user_id: User.second.id)
+                          size: "XXXL", price: 200, category: "skirts", user_id: User.second.id)
 url = 'https://images.unsplash.com/photo-1573878591960-37c788c55728?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'
 filename = File.basename(URI.parse(url).path)
 file = URI.open(url)

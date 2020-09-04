@@ -12,6 +12,8 @@
 @import "components/index";
 @import "pages/index";
 
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Open+Sans+Condensed:wght@300;700&display=swap');
 
 /* clears the 'X' from Internet Explorer */
 input[type=search]::-ms-clear { display: none; width : 0; height: 0; }

@@ -1,6 +1,8 @@
 // Specific CSS for your home-page
 .text-center {
   text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+  letter-spacing: 1px;
 }
 
 .container {
@@ -17,6 +19,8 @@
 .product-button {
   display: flex;
   justify-content: center;
+  padding-bottom: 125px;
+  padding-top: 60px;
 }
 
 a {
@@ -38,8 +42,4 @@ a {
     background-color: #343a40;
     color : #F2FFF3;
     justify-content: center;
-  }
-
-  .product-button {
-    padding-bottom: 125px;
   }

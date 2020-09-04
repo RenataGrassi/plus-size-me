@@ -14,6 +14,10 @@
   padding: 20px;
   border: 1px solid rgb(230,230,230);
   margin: 30px 0;
+  h5 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: 1px;
+  }
 }
 
 .cards-grid {
@@ -36,4 +40,43 @@
 .card-deck {
   margin-right: 40px;
   margin-left: 40px;
+  text-align: center;
+  p {
+    font-family: 'Work Sans', sans-serif;
+    padding-top: 20px;
+  }
+}
+
+.product-card {
+  width: 800px;
+  height: 800px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgb(230,230,230);
+  margin: 30px 0;
+  h2 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: 1px;
+  }
+}
+
+.product-info {
+  flex-direction: row-reverse;
+  .info {
+    text-align: left;
+  }
+  .product-buttons {
+    text-align: left;
+  }
+  .image {
+    max-width: 100px;
+    max-height: 500px;
+    object-fit: cover;
+  }
+}
+
+.card-img-top {
+  padding-left: 80px;
 }

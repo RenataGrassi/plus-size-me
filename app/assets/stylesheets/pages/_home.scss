@@ -1,6 +1,8 @@
 // Specific CSS for your home-page
 .text-center {
   text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+  letter-spacing: 1px;
 }
 
 .container {
@@ -17,12 +19,13 @@
 .product-button {
   display: flex;
   justify-content: center;
+  padding-top: 60px;
 }
 
 a {
   color: #343A40;
   &:hover {
-    color: #F2FFF3;
+    color: #343A40;
     text-decoration: none;
   }
 }
@@ -31,15 +34,3 @@ a {
   max-height: 610px;
   object-fit: cover;
 }
-
-.page-footer {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background-color: #343a40;
-    color : #F2FFF3;
-    justify-content: center;
-  }
-
-  .product-button {
-    padding-bottom: 125px;
-  }

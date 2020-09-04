@@ -1,7 +1,30 @@
-<h2><%= @product.name %></h2>
-<p><%= "USD #{@product.price},00 - #{@product.description}" %></p>
-
-<p><%= link_to "Add to cart", orders_path %></p>
-<p><%= link_to "Edit Product", edit_product_path %></p> <%# Add authorization to current_user %>
-<p><%= link_to "All Products", products_path %></p>
-<p></p><%= link_to "Homepage", root_path %></p>
+<div class="container mt-5 mb-5">
+  <div class="cards">
+    <div class="product-card">
+      <div class="product-title">
+        <h2 class="mt-5 mb-3"><strong><%= @product.name.upcase %></strong></h2>
+        <p>In <strong><%= @product.category.capitalize %></strong></p>
+        <p><i><%= @product.description %></i></p>
+      </div>
+      <div class="product-info row justify-content-around">
+        <div class="info mt-5 pt-5 mr-5 pr-5">
+          <ul>
+            <p><strong><%= "USD #{@product.price},00" %></strong></p>
+            <p>Gender: <%= @product.gender.capitalize %></p>
+            <p>Brand: <%= @product.brand.capitalize %></p>
+            <p>Size: <%= @product.size %></p>
+            <p><%= link_to "Add to cart", orders_path, class: "btn btn-dark" %></p>
+            <% if current_user.id == @product.user_id %>
+              <p><%= link_to "Edit Product", edit_product_path, class: "btn btn-outline-dark" %></p>
+              <p><%= link_to "Delete Product", product_path(@product.id), class: "btn btn-outline-dark", method: :delete, data: { confirm: "Delete #{@product.name}?" } %></p>
+            <% end %>
+            <p><%= link_to "All Products", products_path, class: "btn btn-dark" %></p>
+          </ul>
+        </div>
+        <div class="product-image ml-5 mt-5 pl-5 mr-5 pr-5">
+          <p class="image"><%= cl_image_tag @product.photo.key, height: 500, width: 280, crop: :fill, alt: @product.name %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

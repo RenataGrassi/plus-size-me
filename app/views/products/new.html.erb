@@ -2,30 +2,41 @@
 <%# The user can only add a new product if logged in - authorization + navbar %>
 
 <%= simple_form_for(@product) do |form| %>
-  <div class="contrainer pt-2">
+  <div class="contrainer">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-6 col-lg-3">
-        <h2 class="text-center mb-5 devise-padding">Sell your product!</h2>
+      <div class="col-12 col-md-6 col-lg-4">
+        <h2 class="text-center mt-2 pb-5 devise-padding">SELL YOUR PRODUCT</h2>
         <div class="row">
           <div class="col">
             <div class="form-inputs">
               <div class="row">
                 <div class="col">
-                  <%= form.input :name, placeholder: "ex: Black dress in silk Zara"%>
-                  <%= form.input :description, placeholder: "Give a short description of your article" %>
-                  <%= form.input :gender, collection: Product::GENDER %>
-                  <%= form.input :size, collection: Product::SIZE %>
-                  <%= form.input :brand, placeholder: "Choose the brand" %>
-                  <%= form.input :category, collection: Product::CATEGORY %>
-                  <%= form.input :photo, as: :file, placeholder: "Upload a picture" %>
-                  <%= form.input :price %>
-                  <div class="row">
-                    <div class="col">
-                      <%= form.submit "Sell it", class: "btn-outline-dark btn-lg w-15 mt-3 button-center" %>
-                    </div>
-                    <div class="col">
-                      <p><%= link_to "All Products", products_path %></p>
-                    </div>
+                  <div class="pb-3">
+                    <%= form.input :name, placeholder: "Black Dress in Silk"%>
+                  </div>
+                  <div class="pb-3">
+                    <%= form.input :description, placeholder: "A perfect dress waiting for the perfect owner" %>
+                  </div>
+                  <div class="pb-3">
+                    <%= form.input :gender, collection: Product::GENDER %>
+                  </div>
+                  <div class="pb-3">
+                    <%= form.input :size, collection: Product::SIZE %>
+                  </div>
+                  <div class="pb-3">
+                    <%= form.input :brand, placeholder: "Zara" %>
+                  </div>
+                  <div class="pb-3">
+                    <%= form.input :category, collection: Product::CATEGORY %>
+                  </div>
+                  <div class="pb-3">
+                    <%= form.input :photo, as: :file, placeholder: "Upload a picture" %>
+                  </div>
+                  <div class="pb-3">
+                    <%= form.input :price %>
+                  </div>
+                  <div class="pb-5 mb-4">
+                    <%= form.submit "Sell it", class: "btn btn-dark btn-block" %>
                   </div>
                 </div>
               </div>

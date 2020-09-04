@@ -13,10 +13,11 @@
             <p>Gender: <%= @product.gender.capitalize %></p>
             <p>Brand: <%= @product.brand.capitalize %></p>
             <p>Size: <%= @product.size %></p>
-            <p><%= link_to "Add to cart", orders_path, class: "btn btn-dark" %></p>
             <% if current_user.id == @product.user_id %>
               <p><%= link_to "Edit Product", edit_product_path, class: "btn btn-outline-dark" %></p>
               <p><%= link_to "Delete Product", product_path(@product.id), class: "btn btn-outline-dark", method: :delete, data: { confirm: "Delete #{@product.name}?" } %></p>
+            <% else %>
+              <p><%= link_to "Add to cart", order_products_path(product_id: @product.id), method: :post, class: "btn btn-dark" %></p>
             <% end %>
             <p><%= link_to "All Products", products_path, class: "btn btn-dark" %></p>
           </ul>

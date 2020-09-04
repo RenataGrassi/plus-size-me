@@ -6,7 +6,7 @@
     <%= link_to product_path(product.id) do %>
       <img class="card-img-top"><%= cl_image_tag product.photo.key, height: 280, width: 280, crop: :fill, alt: product.name %>
         <%= "#{product.name}" %>
-        <% if current_user != product.user %>
+        <% if (current_user != product.user) && current_user.present? %>
           <% if product.is_it_in_the_shopping_cart?(current_user) %>
             <%= link_to "Remove from Cart", order_product_path(product.cart_product(current_user)), method: :delete, class: "btn btn-danger" %>
           <% else %>

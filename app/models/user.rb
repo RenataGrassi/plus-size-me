@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :products, dependent: :destroy
-  has_many :orders
+  has_many :orders, dependent: :nullify
 
   validates :first_name, :last_name, :address, presence: true
 end

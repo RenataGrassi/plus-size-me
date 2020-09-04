@@ -3,6 +3,18 @@
 
 <div class="card-deck">
   <% @products.each do |product| %>
+  <li>
+    <%= "#{product.name} #{formatted_price(product.price)}" %>
+    <% if current_user != product.user %>
+      <% if product.is_it_in_the_shopping_cart?(current_user) %>
+        <%= link_to "Remove from Cart", order_product_path(product.cart_product(current_user)), method: :delete, class: "btn btn-danger" %>
+      <% else %>
+        <%= link_to "Add to cart", order_products_path(product_id: product.id), method: :post, class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
+
+  </li>
+
   <div class="card">
     <img class="card-img-top">
     <div class="card-footer">

@@ -40,6 +40,11 @@
 .card-deck {
   margin-right: 40px;
   margin-left: 40px;
+  text-align: center;
+  p {
+    font-family: 'Work Sans', sans-serif;
+    padding-top: 20px;
+  }
 }
 
 .product-card {
@@ -65,7 +70,13 @@
   .product-buttons {
     text-align: left;
   }
-  .product-image img {
+  .image {
+    max-width: 100px;
     max-height: 500px;
+    object-fit: cover;
   }
+}
+
+.card-img-top {
+  padding-left: 80px;
 }

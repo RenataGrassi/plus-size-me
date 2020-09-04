@@ -21,8 +21,8 @@
             <p><%= link_to "All Products", products_path, class: "btn btn-dark" %></p>
           </ul>
         </div>
-        <div class="product-image ml-5 mt-5 pl-5">
-          <p><img src="" alt=""></p>
+        <div class="product-image ml-5 mt-5 pl-5 mr-5 pr-5">
+          <p class="image"><%= cl_image_tag @product.photo.key, height: 500, width: 280, crop: :fill, alt: @product.name %></p>
         </div>
       </div>
     </div>

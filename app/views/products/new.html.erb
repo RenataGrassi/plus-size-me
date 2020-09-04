@@ -11,17 +11,17 @@
             <div class="form-inputs">
               <div class="row">
                 <div class="col">
-                  <%= form.input :name %>
-                  <%= form.input :description %>
+                  <%= form.input :name, placeholder: "ex: Black dress in silk Zara"%>
+                  <%= form.input :description, placeholder: "Give a short description of your article" %>
                   <%= form.input :gender, collection: Product::GENDER %>
                   <%= form.input :size, collection: Product::SIZE %>
-                  <%= form.input :brand %>
+                  <%= form.input :brand, placeholder: "Choose the brand" %>
                   <%= form.input :category, collection: Product::CATEGORY %>
-                  <%= form.input :photo, as: :file %>
+                  <%= form.input :photo, as: :file, placeholder: "Upload a picture" %>
                   <%= form.input :price %>
                   <div class="row">
                     <div class="col">
-                      <%= form.submit %>
+                      <%= form.submit "Sell it", class: "btn-outline-dark btn-lg w-15 mt-3 button-center" %>
                     </div>
                     <div class="col">
                       <p><%= link_to "All Products", products_path %></p>

@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-around;
   margin: 30px;
+  margin-left: 10px;
 }
 
 .card {
@@ -32,8 +33,7 @@
   margin: 10px;
 }
 
-body {
-    background: #f8f9fa;
+.card-deck {
+  margin-right: 40px;
+  margin-left: 40px;
 }
-
-

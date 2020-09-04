@@ -1,15 +1,13 @@
-<div class="container">
-  <div class="cards-grid">
-    <% @products.each do |product| %>
-      <div class="card-category" >
-        <% if product.photo.attached? %>
-        <%= cl_image_tag product.photo.key, height: 180, width: 280, crop: :fill %>
-        <% end %>
-        <%= link_to product.name, product_path(product.id) %> · <%= link_to "Delete", product_path(product.id), method: :delete, data: { confirm: "Delete #{product.name}?" } %> .
-        <%= link_to "Edit", edit_product_path(product.id) %>
-      </div>
-    <% end %>
-  </div>
-</div>
 
-<p><%= link_to "Homepage", root_path %></p>
+<!-- <p><%= link_to "Add A Product", new_product_path %></p> --> <%# Move to navbar if user authorized %>
+
+<div class="card-deck">
+  <% @products.each do |product| %>
+  <div class="card">
+    <img class="card-img-top">
+    <div class="card-footer">
+      <p class="card-text"> <%= product.name %></p>
+    </div>
+  </div>
+  <% end %>
+</div>

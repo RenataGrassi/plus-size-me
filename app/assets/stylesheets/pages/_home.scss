@@ -17,6 +17,8 @@
 .product-button {
   display: flex;
   justify-content: center;
+  padding-bottom: 125px;
+  padding-top: 60px;
 }
 
 a {
@@ -38,8 +40,4 @@ a {
     background-color: #343a40;
     color : #F2FFF3;
     justify-content: center;
-  }
-
-  .product-button {
-    padding-bottom: 125px;
   }
